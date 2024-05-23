@@ -85,6 +85,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
 
   @override
   void initState() {
+    super.initState();
     _searchController = TextEditingController();
 
     _currencyList = _currencyService.getAll();
@@ -104,7 +105,6 @@ class _CurrencyListViewState extends State<CurrencyListView> {
     }
 
     _filteredList.addAll(_currencyList);
-    super.initState();
   }
 
   @override
