@@ -35,6 +35,8 @@ class CurrencyPickerThemeData {
   /// By default it's fullscreen
   final double? bottomSheetHeight;
 
+  final TextStyle? searchTextStyle;
+
   CurrencyPickerThemeData({
     this.shape,
     this.flagSize,
@@ -44,5 +46,6 @@ class CurrencyPickerThemeData {
     this.currencySignTextStyle,
     this.backgroundColor,
     this.bottomSheetHeight,
+    this.searchTextStyle,
   });
 }

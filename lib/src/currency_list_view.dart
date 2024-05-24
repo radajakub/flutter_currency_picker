@@ -96,8 +96,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
       final List<String> currencyFilter =
           widget.currencyFilter!.map((code) => code.toUpperCase()).toList();
 
-      _currencyList
-          .removeWhere((element) => !currencyFilter.contains(element.code));
+      _currencyList.removeWhere((element) => !currencyFilter.contains(element.code));
     }
 
     if (widget.favorite != null) {
@@ -123,16 +122,18 @@ class _CurrencyListViewState extends State<CurrencyListView> {
           child: widget.showSearchField
               ? TextField(
                   controller: _searchController,
-                  decoration: widget.theme?.inputDecoration ?? InputDecoration(
-                    labelText: widget.searchHint ?? "Search",
-                    hintText: widget.searchHint ?? "Search",
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: const Color(0xFF8C98A8).withOpacity(0.2),
+                  decoration: widget.theme?.inputDecoration ??
+                      InputDecoration(
+                        labelText: widget.searchHint ?? "Search",
+                        hintText: widget.searchHint ?? "Search",
+                        prefixIcon: const Icon(Icons.search),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: const Color(0xFF8C98A8).withOpacity(0.2),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
+                  style: widget.theme?.searchTextStyle ?? _defaultTitleTextStyle,
                   onChanged: _filterSearchResults,
                 )
               : Container(),
@@ -157,8 +158,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
   }
 
   Widget _listRow(Currency currency) {
-    final TextStyle titleTextStyle =
-        widget.theme?.titleTextStyle ?? _defaultTitleTextStyle;
+    final TextStyle titleTextStyle = widget.theme?.titleTextStyle ?? _defaultTitleTextStyle;
     final TextStyle subtitleTextStyle =
         widget.theme?.subtitleTextStyle ?? _defaultSubtitleTextStyle;
     final currencySignTextStyle =
@@ -199,9 +199,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
                           if (widget.showCurrencyName) ...[
                             Text(
                               currency.name,
-                              style: widget.showCurrencyCode
-                                  ? subtitleTextStyle
-                                  : titleTextStyle,
+                              style: widget.showCurrencyCode ? subtitleTextStyle : titleTextStyle,
                             ),
                           ],
                         ],
