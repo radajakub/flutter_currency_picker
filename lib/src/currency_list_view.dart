@@ -141,6 +141,7 @@ class _CurrencyListViewState extends State<CurrencyListView> {
         Expanded(
           child: ListView(
             physics: widget.physics,
+            padding: EdgeInsets.only(bottom: 400),
             children: [
               if (_favoriteList != null) ...[
                 ..._favoriteList!.map<Widget>((currency) => _listRow(currency)),
