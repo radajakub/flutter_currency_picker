@@ -15,6 +15,7 @@ void showCurrencyListBottomSheet({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   bool useRootNavigator = false,
+  bool isDismissible = true,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
 }) {
@@ -26,6 +27,7 @@ void showCurrencyListBottomSheet({
   showModalBottomSheet<dynamic>(
     context: context,
     isScrollControlled: true,
+    isDismissible: isDismissible,
     shape: shape,
     useRootNavigator: useRootNavigator,
     backgroundColor: theme?.backgroundColor,
@@ -60,8 +62,7 @@ Widget _builder(
 ) {
   final device = MediaQuery.of(context).size.height;
   final statusBarHeight = MediaQuery.of(context).padding.top;
-  final height = theme?.bottomSheetHeight ??
-      device - (statusBarHeight + (kToolbarHeight / 1.5));
+  final height = theme?.bottomSheetHeight ?? device - (statusBarHeight + (kToolbarHeight / 1.5));
   return SizedBox(
     height: height,
     child: CurrencyListView(

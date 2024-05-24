@@ -57,6 +57,7 @@ void showCurrencyPicker({
   bool showCurrencyName = true,
   bool showCurrencyCode = true,
   bool useRootNavigator = false,
+  bool isDismissible = true,
   ScrollPhysics? physics,
   CurrencyPickerThemeData? theme,
   @Deprecated(
@@ -74,6 +75,7 @@ void showCurrencyPicker({
     onSelect: onSelect,
     showSearchField: showSearchField,
     searchHint: searchHint,
+    isDismissible: isDismissible,
     showFlag: showFlag,
     showCurrencyName: showCurrencyName,
     showCurrencyCode: showCurrencyCode,
